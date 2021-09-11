@@ -41,3 +41,16 @@ nbdist/
 !*/build/*.java
 !*/build/*.html
 !*/build/*.xml
+# 增加跳过autocopy.bat复制的文件列表
+/docker/mysql/db/quartz.sql
+/docker/run.sh
+/docker/ruoyi/auth/jar/ruoyi-auth.jar
+/docker/ruoyi/gateway/jar/ruoyi-gateway.jar
+/docker/ruoyi/modules/file/jar/ruoyi-modules-file.jar
+/docker/ruoyi/modules/gen/jar/ruoyi-modules-gen.jar
+/docker/ruoyi/modules/job/jar/ruoyi-modules-job.jar
+/docker/ruoyi/modules/system/jar/ruoyi-modules-system.jar
+/docker/ruoyi/visual/monitor/jar/ruoyi-visual-monitor.jar
+/docker/mysql/db/ry_20210908.sql
+/docker/mysql/db/ry_config_20210730.sql
+/docker/mysql/db/ry_seata_20210128.sql
