@@ -2,7 +2,7 @@
 
 # 使用说明，用来提示输入参数
 usage() {
-	echo "Usage: sh 执行脚本.sh [port|base|modules|stop|rm]"
+	echo "Usage: sh 执行脚本.sh [port|base|modules|other|stop|rm]"
 	exit 1
 }
 
@@ -26,14 +26,17 @@ port(){
 
 # 启动基础环境（必须）
 base(){
-	docker-compose up -d ruoyi-mysql ruoyi-redis ruoyi-nacos ruoyi-nginx
+	docker-compose up -d ruoyi-mysql ruoyi-redis ruoyi-nacos
 }
 
 # 启动程序模块（必须）
 modules(){
-	docker-compose up -d ruoyi-gateway ruoyi-auth ruoyi-modules-system
+	docker-compose up -d ruoyi-nginx ruoyi-gateway ruoyi-auth ruoyi-modules-system
 }
-
+# 启动其他模块（按须）：file,gen,job
+other(){
+  docker-compose up -d ruoyi-modules-gen ruoyi-modules-job ruoyi-visual-monitor
+}
 # 关闭所有环境/模块
 stop(){
 	docker-compose stop
@@ -54,6 +57,9 @@ case "$1" in
 ;;
 "modules")
 	modules
+;;
+"other")
+  other
 ;;
 "stop")
 	stop
