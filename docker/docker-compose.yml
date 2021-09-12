@@ -56,6 +56,7 @@ services:
       context: ./nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/html/dist:/home/ruoyi/projects/ruoyi-ui
       - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
