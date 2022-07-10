@@ -1,0 +1,8 @@
+方法一、在windows上可以用文本编辑器查看所有字符，例如notepad++，编辑->档案格式转换->转换为UNIX格式
+
+方法二、使用dos2unix工具进行处理。
+再linux上安装dos2unix工具：sudo yum install dos2unix（根据系统使用不同命令安装）
+
+安装成功后可以定义一个shell脚本，或者手动执行一下命令
+
+dos2unix  *.sh
